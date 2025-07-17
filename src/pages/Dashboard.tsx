@@ -24,9 +24,6 @@ import { CalendarWidget } from "@/components/widgets/CalendarWidget";
 import { WeatherWidget } from "@/components/widgets/WeatherWidget";
 import { AIAssistantWidget } from "@/components/widgets/AIAssistantWidget";
 import { StatsWidget } from "@/components/widgets/StatsWidget";
-import { JobHuntWidget } from "@/components/widgets/JobHuntWidget";
-import { LearningWidget } from "@/components/widgets/LearningWidget";
-import { EntertainmentWidget } from "@/components/widgets/EntertainmentWidget";
 import { SettingsPanel } from "@/components/SettingsPanel";
 import { VoiceCommand } from "@/components/VoiceCommand";
 
@@ -40,9 +37,6 @@ export default function Dashboard() {
     { id: "weather", type: "weather", position: { x: 3, y: 0, width: 1, height: 1 } },
     { id: "ai", type: "ai", position: { x: 0, y: 1, width: 2, height: 1 } },
     { id: "stats", type: "stats", position: { x: 2, y: 1, width: 2, height: 1 } },
-    { id: "jobs", type: "jobs", position: { x: 0, y: 2, width: 1, height: 1 } },
-    { id: "learning", type: "learning", position: { x: 1, y: 2, width: 1, height: 1 } },
-    { id: "entertainment", type: "entertainment", position: { x: 2, y: 2, width: 2, height: 1 } },
   ]);
 
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -79,12 +73,6 @@ export default function Dashboard() {
         return <AIAssistantWidget key={widget.id} />;
       case "stats":
         return <StatsWidget key={widget.id} />;
-      case "jobs":
-        return <JobHuntWidget key={widget.id} />;
-      case "learning":
-        return <LearningWidget key={widget.id} />;
-      case "entertainment":
-        return <EntertainmentWidget key={widget.id} />;
       default:
         return null;
     }
